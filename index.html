@@ -1,101 +1,127 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head onload="startGame()">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="violinoStyle.css">
-    <script src="violinoScript.js"></script> 
+    <link rel="stylesheet" href="mainMenu/violinoStyle.css">
+    <link rel="stylesheet" href="fightStyle.css">
+    <script src="fightScript.js"></script>
+    <script src="mainMenu/script.js"></script>
     <title>Violino - Remastered</title>
 </head>
-<body>
-    <div id="wrap">
-        <div class="navbar" id="fightNavbar" style="display: none;">
 
-        </div>
-        <div class="navbar" id="nonFightNavbar">
-            <div class="botao" id="places" onclick="go('loja')">
-                Ir para a loja
-            </div>
-            <div class="botao" id="places" onclick="go('torre')">
-                Ir para a torre
-            </div>
-        </div>
-        <div class="battlefield" id="battlefield1" style="display: none;">
-            <div id="player">
-                <div id="playerSprite">
-
+<body style="margin:0%;">
+    <div class="mainScreen" id="mainMenu">
+        <div id="mainScreenButtonsDiv">
+            <div style="float: left; display: flex; flex-direction: column; justify-content: space-between; height: 150px;">
+                <div id="newgameButton" class="botao" onclick="startNewGame()">
+                    NOVO JOGUIN
                 </div>
-                <div id="playerStats">
-
+                <div id="continueButton" class="botao" onclick="continueGame()">
+                    CONTINUAR
                 </div>
             </div>
-            <div id="enemy">
-                <div id="enemySprite">
+            
+            <div>
+            </div>
 
-                </div>
-                <div id="enemyStats">
-                    
-                </div>
+            <div id="highscoreButton" class="botao">
+                LEADERBOARD
             </div>
         </div>
-        <div class="battlefield" id="battlefieldShop">
-            <div id="player">
-                <div id="playerSprite">
-
-                </div>
-                <div id="playerStatsShop">
-
-                </div>
-            </div>
-        </div>
-        <div class="lowermenu" id="fightingMenu1" style="display: none;">
-            <div id="actions">
-                <div class="botao" id="atacar" onclick="atacar()">
-                    Atacar
-                </div>
-                <div class="botao" id="defender" onclick="defender()">
-                    Defender
-                </div>
-                <div class="botao" id="logtest" onclick="RestablishStats()">
-                    Carregar <br>
-                    teus stats
-                </div>
-                <div class="botao" id="logtest" onclick="startFight()">
-                    Carregar <br>
-                    batalha teste
-                </div>
-            </div>
-            <div id="log">
-                Isso é uma mensagem.<BR>
-                A
-            </div>
-        </div>
-        <div class="lowermenu" id="shopMenu1">
-            <div id="actions">
-                Opções de compra:
-                <div class="botao" id="shopChoice" onclick="buy('attack')">
-                    Melhorar Espada: PRECO
-                </div>
-                <div class="botao" id="shopChoice" onclick="buy('defense')">
-                    Melhorar Armadura: PRECO
-                </div>
-                <div class="botao" id="shopChoice" onclick="buy('stamina')">
-                    Sessão de treinamento cardio: PRECO
-                </div>
-                <div class="botao" id="shopChoice" onclick="buy('critChance')">
-                    Pedra de amolar de um uso: PRECO
-                </div>
-                <div class="botao" id="shopChoice" onclick="buy('nada')">
-                    Literalmente só ver os stats
-                </div>
-            </div>
-            <div id="logShop">
-
-            </div>
-        </div>
-
     </div>
-    
+    <div id="game" style="display: none;">
+        <div id="wrap">
+            <div class="navbar" id="fightNavbar" style="display: none;">
+
+            </div>
+            <div class="navbar" id="nonFightNavbar">
+                <div class="botao" id="places" onclick="go('loja')">
+                    Ir para a loja
+                </div>
+                <div class="botao" id="places" onclick="go('torre')">
+                    Ir para a torre
+                </div>
+            </div>
+            <div class="battlefield" id="battlefield1" style="display: none;">
+                <div id="player">
+                    <div id="playerSprite">
+
+                    </div>
+                    <div id="playerStats">
+
+                    </div>
+                </div>
+                <div id="enemy">
+                    <div id="enemySprite">
+
+                    </div>
+                    <div id="enemyStats">
+
+                    </div>
+                </div>
+            </div>
+            <div class="battlefield" id="battlefieldShop">
+                <div id="player">
+                    <div id="playerSprite">
+
+                    </div>
+                    <div id="playerStatsShop">
+
+                    </div>
+                </div>
+            </div>
+            <div class="lowermenu" id="fightingMenu1" style="display: none;">
+                <div id="actions">
+                    <div class="botao" id="atacar" onclick="atacar()">
+                        Atacar
+                    </div>
+                    <div class="botao" id="defender" onclick="defender()">
+                        Defender
+                    </div>
+                    <div class="botao" id="logtest" onclick="RestablishStats()">
+                        Carregar <br>
+                        teus stats
+                    </div>
+                    <div class="botao" id="logtest" onclick="startFight()">
+                        Carregar <br>
+                        batalha teste
+                    </div>
+                </div>
+                <div id="log">
+                    Isso é uma mensagem.<BR>
+                    A
+                </div>
+            </div>
+            <div class="lowermenu" id="shopMenu1">
+                <div id="actions">
+                    Opções de compra:
+                    <div class="botao" id="shopChoice" onclick="buy('attack')">
+                        Melhorar Espada: PRECO
+                    </div>
+                    <div class="botao" id="shopChoice" onclick="buy('defense')">
+                        Melhorar Armadura: PRECO
+                    </div>
+                    <div class="botao" id="shopChoice" onclick="buy('stamina')">
+                        Sessão de treinamento cardio: PRECO
+                    </div>
+                    <div class="botao" id="shopChoice" onclick="buy('critChance')">
+                        Pedra de amolar de um uso: PRECO
+                    </div>
+                    <div class="botao" id="shopChoice" onclick="buy('nada')">
+                        Literalmente só ver os stats
+                    </div>
+                </div>
+                <div id="logShop">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </body>
+
 </html>

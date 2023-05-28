@@ -1,0 +1,131 @@
+body{
+    background-color: #000000;
+}
+#wrap{
+    width: 200vh;
+    height: 95vh;
+    background-color: #4c75c6;
+    overflow: hidden;
+    margin: auto;
+}
+.navbar{
+    height: 64px;
+    max-height: 10%;
+    width: 100%;
+    background-color: #ffffff;
+}
+.battlefield{
+    height: 60%;
+    width: 100%;
+    background-color: #fffeb7;
+}
+#player{
+    height: auto;
+    width: 256px;
+    float: left;
+    padding-top: 64px;
+    padding-bottom: 16px;
+}
+#playerSprite{
+    height: 128px;
+    width: 64px;
+    background-color: #000000;
+    margin-left: auto;
+    margin-right: auto;
+}
+#enemy{
+    height: auto;
+    width: 256px;
+    float: right;
+    padding-top: 64px;
+    padding-bottom: 16px;
+}
+#enemySprite{
+    height: 256px;
+    width: 128px;
+    background-image: url("testdummy_passive.png");
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+}
+.lowermenu{
+    height:max-content;
+    height: 32%;
+    width: 100%;
+    background-color: #eacaca;
+}
+#actions{
+    background-color: #71099d;
+    height: 100%;
+    width: 69%;
+    clear: none;
+    float: left;
+}
+#log{
+    background-color: #ff8787;
+    height: 70%;
+    width: 30%;
+    clear: none;
+    float: right;
+    padding: 5px;
+    overflow-y: scroll;
+}
+#logShop{
+    background-color: #ff8787;
+    height: 70%;
+    width: 30%;
+    clear: none;
+    float: right;
+    padding: 5px;
+    overflow-y: scroll;
+}
+/* botões */
+#atacar{
+    background-color: #ffa851;
+    color: #ffffff;
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin: 10px;
+    
+}
+#defender{
+    background-color: #68ebff;
+    color: #ffffff;
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin: 10px;
+    
+}
+#logtest{
+    background-color: #9d7b09;
+    color: #ffffff;
+    height: 50px;
+    width: 50px;
+    float: right;
+    margin: 10px;
+    
+}
+#places{
+    background-color: #a4a4a4;
+    color: #ffffff;
+    height: 50px;
+    width: 100px;
+    float: left;
+    margin: 10px;
+    
+}
+#shopChoice{
+    background-color: #ce4de2;
+    color: #ffffff;
+    height: 50px;
+    width: 100px;
+    float: left;
+    margin: 10px;
+    
+}
+.botao:hover{
+    cursor: pointer;
+    
+}
