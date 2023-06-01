@@ -91,7 +91,28 @@ function startFight(){
         
 
         /* somente pra testar a batalha*/
+       
 
+       
+        var enemy = {
+            name : '',
+            maxHP : 10,
+            attack : 2
+
+        };
+
+        var fnsfun = [];
+        fnsfun.push(enemy);
+
+        var fns = {}
+        fns['fase1'] = enemy;
+        fns['fase2'] = enemy2;
+
+        var fns = {
+            fase1 : enemy,
+            fase2 : enemy2
+        };
+        
         enemyName = 'Marquinhos, o boneco de testes';
         enemyMaxHp = 10;
         enemyHp = 10;
