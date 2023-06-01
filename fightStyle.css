@@ -79,6 +79,18 @@ body{
     padding: 5px;
     overflow-y: scroll;
 }
+#playerHPBackground{
+    width: 0%;
+    background-color: #000000;
+    color: #000000;
+    overflow: hidden;
+    float: right;
+}
+#playerHP{
+    width: 100%;
+    background-color: #116400;
+    color: #ffffff;
+}
 /* botões */
 #atacar{
     background-color: #ffa851;

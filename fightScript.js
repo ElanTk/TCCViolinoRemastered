@@ -50,6 +50,7 @@ function go(location){
         fightingMenu1.style.display = 'block';
     }
 
+    updateStats();
 }
 function RestablishStats(){
         localStorage.setItem('attack_stat', 3);
@@ -99,10 +100,7 @@ function startFight(){
         enemyChargeMultiplier = 2;
         enemyGold = 14;
 
-        playerStats.innerHTML = 'HP:' + hpCurrent + '/' + hpMax_stat + ' Stamina:' + 
-    staminaCurrent + '/' + staminaMax_stat + ' Ataque:' + 
-    attack_stat + ' Defesa:' + defense_stat + ' crit: ' + 
-    critChance_stat + '%, ' + critMult_stat + 'x';
+        updateStats();
 
     enemyStats.innerHTML = enemyName + '<br>HP:' + enemyHp + '/' + enemyMaxHp + ' Ataque:' + enemyAttack + ' Defesa:' + enemyDefense;
     if(enemyHp <= 0){
@@ -142,6 +140,7 @@ function atacar(){
     }
     if(enemyHp <= 0){
         var enemySprite = document.getElementById('enemySprite');
+        localStorage.setItem('hpCurrent', hpCurrent);
         log.innerHTML += '<br>O teu inimigo aí morreu mano ;)';
         localStorage.setItem('gold', Number(localStorage.getItem('gold')) + enemyGold);
         log.innerHTML += '<br>Após procurar o corpo, você acha ' + enemyGold + ' dinheiros';
@@ -235,19 +234,39 @@ function updateStats(){
         localStorage.getItem('critChance_stat') + '%, ' + localStorage.getItem('critMult_stat') + 'x';
         }
     
-    if(document.getElementById('playerStats')){
-    var playerStats = document.getElementById('playerStats');
+    if(document.getElementById('playerStatsText') && document.getElementById('playerHP') && document.getElementById('playerHPBackground')){
+    var playerStats = document.getElementById('playerStatsText');
+    var playerHP = document.getElementById('playerHP');
+    var playerHPBackground = document.getElementById('playerHPBackground');
 
     if(inBattle == 1){
-        playerStats.innerHTML = 'HP:' + hpCurrent + '/' + hpMax_stat + ' Stamina:' + 
+        hpBarWidth = (hpCurrent / hpMax_stat) * 100;
+        var backgroundHpBar = 100 - hpBarWidth;
+        if(hpBarWidth < 0){ hpBarWidth = 0; }
+        if(backgroundHpBar > 100){ backgroundHpBar = 100; }
+        backgroundHpBar = backgroundHpBar + '%';
+        hpBarWidth = hpBarWidth + '%';
+        playerHP.style.width = hpBarWidth;
+        playerHPBackground.style.width = backgroundHpBar;
+        playerHPBackground.innerHTML = 'HP:' + hpCurrent + '/' + hpMax_stat;
+        playerHP.innerHTML = 'HP:' + hpCurrent + '/' + hpMax_stat;
+        playerStats.innerHTML =  ' Stamina:' + 
     staminaCurrent + '/' + staminaMax_stat + ' Ataque:' + 
     attack_stat + ' Defesa:' + defense_stat + ' crit: ' + 
     critChance_stat + '%, ' + critMult_stat + 'x';
     }
     else{
-
-    
-    playerStats.innerHTML = 'HP:' + localStorage.getItem('hpCurrent') + '/' + localStorage.getItem('hpMax_stat') + ' Stamina:' + 
+        hpBarWidth = (hpCurrent / hpMax_stat) * 100;
+        var backgroundHpBar = 100 - hpBarWidth;
+        if(hpBarWidth < 0){ hpBarWidth = 0; }
+        if(backgroundHpBar > 100){ backgroundHpBar = 100; }
+        backgroundHpBar = backgroundHpBar + '%';
+        hpBarWidth = hpBarWidth + '%';
+        playerHP.style.width = hpBarWidth;
+        playerHPBackground.style.width = backgroundHpBar;
+    playerHP.innerHTML = 'HP:' + localStorage.getItem('hpCurrent') + '/' + localStorage.getItem('hpMax_stat');
+    playerHPBackground.innerHTML = 'HP:' + localStorage.getItem('hpCurrent') + '/' + localStorage.getItem('hpMax_stat');
+    playerStats.innerHTML = ' Stamina:' + 
     localStorage.getItem('staminaCurrent') + '/' + localStorage.getItem('staminaMax_stat') + ' Ataque:' + 
     localStorage.getItem('attack_stat') + ' Defesa:' + localStorage.getItem('defense_stat') + ' crit: ' + 
     localStorage.getItem('critChance_stat') + '%, ' + localStorage.getItem('critMult_stat') + 'x';
