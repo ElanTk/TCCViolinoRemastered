@@ -1,0 +1,29 @@
+#dbody{
+    border: solid black 2px;
+    height: 900px;
+    margin-top: 50px;
+}
+
+
+
+#inserir{
+    background-color: aqua;
+    border: solid black 2px;
+    text-align: center;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 50px;;
+}
+#lista{
+    background-color: aqua;
+    border: solid black 2px;
+    text-align: center;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 50px;;
+}
+
